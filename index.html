@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity Bill Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the manifest and meta tags if using as PWA -->
+</head>
+<body>
+    <h1>Electricity Bill Management</h1>
+    <div class="container">
+        <!-- Tenant List Section -->
+        <div id="tenant-list">
+            <!-- Tenant cards will be generated here -->
+        </div>
+        <button id="add-tenant-btn">Add Tenant</button>
+    </div>
+
+    <!-- Tenant Dashboard Modal -->
+    <div id="tenant-dashboard" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="tenant-name"></h2>
+            <p>Old Reading: <span id="old-reading">0</span></p>
+            <label for="new-reading">New Reading:</label>
+            <input type="number" id="new-reading" required>
+            <label for="month-select">Month:</label>
+            <select id="month-select" required></select>
+            <button id="calculate-btn">Calculate Bill</button>
+            <div id="bill-section"></div>
+            <button id="share-btn">Share Details</button>
+            <button id="history-btn">View History</button>
+            <div id="history-section" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-settings-btn">&times;</span>
+            <h2>Settings</h2>
+            <label for="rate">Electricity Rate (per unit):</label>
+            <input type="number" id="rate" step="0.01" required>
+            <button id="save-rate-btn">Save Rate</button>
+        </div>
+    </div>
+
+    <!-- Settings Icon -->
+    <button id="settings-btn" title="Settings">⚙️</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
